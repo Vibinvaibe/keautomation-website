@@ -17,9 +17,19 @@ const revealOnScroll = () => {
 };
 
 document.querySelectorAll(".accordion-item").forEach(item => {
-  item.addEventListener("click", () => {
-    item.classList.toggle("active");
-  });
+  const title = item.querySelector('.accordion-title');
+  if (title) {
+    title.addEventListener("click", () => {
+      // Close all other accordions
+      document.querySelectorAll('.accordion-item').forEach(other => {
+        if (other !== item) {
+          other.classList.remove('active');
+        }
+      });
+      // Toggle current
+      item.classList.toggle('active');
+    });
+  }
 });
 
 
