@@ -75,3 +75,64 @@ a {
     max-width: var(--container-width);
     margin: auto;
 }
+.what-we-do {
+  padding: 80px 0;
+  background: #f9fafb;
+}
+
+.what-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.what-left h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.what-left p {
+  color: #555;
+  line-height: 1.7;
+}
+
+/* ACCORDION */
+.accordion-item {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 20px 0;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.accordion-title {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.4s ease;
+  color: #555;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 200px;
+}
+
+/* Hover for desktop */
+@media (hover: hover) {
+  .accordion-item:hover .accordion-content {
+    max-height: 200px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .what-grid {
+    grid-template-columns: 1fr;
+  }
+}
