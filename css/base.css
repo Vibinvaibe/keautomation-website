@@ -1,0 +1,77 @@
+/* ==============================
+   1. CSS VARIABLES (Design System)
+================================= */
+
+:root {
+    --primary-yellow: #ffcc00;
+    --dark-bg: #0f0f0f;
+    --dark-secondary: #1a1a1a;
+    --light-text: #ffffff;
+    --muted-text: #bdbdbd;
+    --border-color: #2a2a2a;
+
+    --transition: all 0.3s ease;
+
+    --container-width: 1200px;
+}
+
+/* ==============================
+   2. RESET
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    line-height: 1.6;
+}
+
+/* ==============================
+   3. TYPOGRAPHY
+================================= */
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 56px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+p {
+    color: var(--muted-text);
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==============================
+   4. CONTAINER SYSTEM
+================================= */
+
+.container {
+    width: 90%;
+    max-width: var(--container-width);
+    margin: auto;
+}
