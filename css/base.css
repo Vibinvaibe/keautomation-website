@@ -1,3 +1,57 @@
+/* ACCORDION THEME */
+.accordion {
+    background: var(--dark-secondary);
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+    padding: 0 0 10px 0;
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px 0;
+    cursor: pointer;
+    transition: background 0.3s, border 0.3s;
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-title {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--primary-yellow);
+    transition: color 0.3s;
+    position: relative;
+}
+
+.accordion-item.active .accordion-title {
+    color: #fff;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.3s;
+    color: var(--muted-text);
+    line-height: 1.6;
+    margin-top: 10px;
+    padding: 0 0;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 200px;
+    padding: 10px 0 0 0;
+}
+
+@media (hover: hover) {
+    .accordion-item:hover .accordion-title {
+        color: #fff;
+    }
+    .accordion-item:hover {
+        background: #181818;
+    }
+}
 /* ==============================
    1. CSS VARIABLES (Design System)
 ================================= */
