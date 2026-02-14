@@ -1,13 +1,18 @@
-// ==============================
-// STICKY NAVBAR ON SCROLL
-// ==============================
+document.addEventListener("DOMContentLoaded", () => {
 
-window.addEventListener("scroll", function () {
-    const navbar = document.querySelector(".navbar");
+  const navbar = document.querySelector(".navbar");
+  let lastScroll = 0;
 
-    if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > 80) {
+      navbar.classList.add("scrolled");
     } else {
-        navbar.classList.remove("scrolled");
+      navbar.classList.remove("scrolled");
     }
+
+    lastScroll = currentScroll;
+  });
+
 });

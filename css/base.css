@@ -1,131 +1,98 @@
-/* ACCORDION THEME */
-.accordion {
-    background: var(--dark-secondary);
-    border-radius: 10px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.12);
-    padding: 0 0 10px 0;
-}
-
-.accordion-item {
-    border-bottom: 1px solid var(--border-color);
-    padding: 20px 0;
-    cursor: pointer;
-    transition: background 0.3s, border 0.3s;
-}
-
-.accordion-item:last-child {
-    border-bottom: none;
-}
-
-.accordion-title {
-    font-weight: 600;
-    font-size: 18px;
-    color: var(--primary-yellow);
-    transition: color 0.3s;
-    position: relative;
-}
-
-.accordion-item.active .accordion-title {
-    color: #fff;
-}
-
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.3s;
-    color: var(--muted-text);
-    line-height: 1.6;
-    margin-top: 10px;
-    padding: 0 0;
-}
-
-.accordion-item.active .accordion-content {
-    max-height: 200px;
-    padding: 10px 0 0 0;
-}
-
-@media (hover: hover) {
-    .accordion-item:hover .accordion-title {
-        color: #fff;
-    }
-    .accordion-item:hover {
-        background: #181818;
-    }
-}
-/* ==============================
-   1. CSS VARIABLES (Design System)
-================================= */
+/* =========================================
+   PREMIUM DESIGN SYSTEM
+========================================= */
 
 :root {
-    --primary-yellow: #ffcc00;
-    --dark-bg: #0f0f0f;
-    --dark-secondary: #1a1a1a;
-    --light-text: #ffffff;
-    --muted-text: #bdbdbd;
-    --border-color: #2a2a2a;
 
-    --transition: all 0.3s ease;
+  /* Brand Colors */
+  --primary-yellow: #f5c400;
+  --primary-yellow-dark: #d4a900;
+  --black: #0e0e0e;
+  --black-soft: #151515;
+  --gray-dark: #1e1e1e;
+  --gray-light: #bdbdbd;
+  --white: #ffffff;
 
-    --container-width: 1200px;
+  /* Gradients */
+  --yellow-gradient: linear-gradient(135deg, #f5c400, #ffdd33);
+
+  /* Shadows */
+  --shadow-soft: 0 10px 40px rgba(0,0,0,0.25);
+  --shadow-glow: 0 0 40px rgba(245,196,0,0.35);
+
+  /* Typography */
+  --font-primary: 'Inter', sans-serif;
+
+  /* Motion */
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-fast: 300ms var(--ease-premium);
+  --transition-medium: 500ms var(--ease-premium);
+  --transition-slow: 800ms var(--ease-premium);
+
+  /* Layout */
+  --container-width: 1400px;
 }
 
-/* ==============================
-   2. RESET
-================================= */
+/* =========================================
+   RESET
+========================================= */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: var(--dark-bg);
-    color: var(--light-text);
-    line-height: 1.6;
+  font-family: var(--font-primary);
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* ==============================
-   3. TYPOGRAPHY
-================================= */
-
-h1, h2, h3, h4 {
-    font-weight: 700;
-}
+/* =========================================
+   TYPOGRAPHY (FLUID)
+========================================= */
 
 h1 {
-    font-size: 56px;
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -1px;
 }
 
 h2 {
-    font-size: 40px;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 700;
 }
 
 h3 {
-    font-size: 24px;
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 
 p {
-    color: var(--muted-text);
-    font-size: 16px;
+  color: var(--gray-light);
+  font-size: 1rem;
+  max-width: 600px;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
-/* ==============================
-   4. CONTAINER SYSTEM
-================================= */
+/* =========================================
+   CONTAINER
+========================================= */
 
 .container {
-    width: 90%;
-    max-width: var(--container-width);
-    margin: auto;
+  width: 92%;
+  max-width: var(--container-width);
+  margin: 0 auto;
 }
