@@ -155,6 +155,10 @@
   gap: 16px;
 }
 
+.home-contact-form button[type="submit"] {
+  margin-bottom: 10px;
+}
+
 /* Inner pages */
 
 .page-hero {
