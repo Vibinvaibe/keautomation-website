@@ -2,12 +2,45 @@
 
   .hero-grid,
   .services-grid,
-  .contact-grid {
+  .contact-grid,
+  .page-content-grid,
+  .service-columns {
     grid-template-columns: 1fr;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .service-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .service-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-right img {
+    height: 420px;
+  }
+
+  .service-showcase-item img {
+    height: 340px;
   }
 
   .product-card {
     min-width: 280px;
+    height: 560px;
   }
 
 }
@@ -20,6 +53,50 @@
 
   .hero-buttons {
     flex-direction: column;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-showcase-item img {
+    height: 300px;
+  }
+
+  .thankyou-card {
+    padding: 30px 22px;
+  }
+
+  .thankyou-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .about-right img {
+    height: 320px;
+  }
+
+  .cta-strip {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-center {
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .nav-center a {
+    font-size: 16px;
+  }
+
+  .logo {
+    height: 84px;
   }
 
 }

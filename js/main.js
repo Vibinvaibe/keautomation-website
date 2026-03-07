@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
 class MagneticButtons {
   constructor() {
     this.buttons = document.querySelectorAll(".btn");
+    this.rafMap = new WeakMap();
+    this.pointerMap = new WeakMap();
     this.init();
   }
 
@@ -24,15 +26,31 @@ class MagneticButtons {
   }
 
   magnetize(e, btn) {
-    const rect = btn.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
+    this.pointerMap.set(btn, { clientX: e.clientX, clientY: e.clientY });
+    if (this.rafMap.get(btn)) return;
 
-    btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+    const rafId = requestAnimationFrame(() => {
+      const pointer = this.pointerMap.get(btn);
+      if (!pointer) return;
+
+      const rect = btn.getBoundingClientRect();
+      const x = pointer.clientX - rect.left - rect.width / 2;
+      const y = pointer.clientY - rect.top - rect.height / 2;
+
+      btn.style.transform = `translate3d(${x * 0.16}px, ${y * 0.16}px, 0)`;
+      this.rafMap.delete(btn);
+    });
+
+    this.rafMap.set(btn, rafId);
   }
 
   reset(btn) {
-    btn.style.transform = "translate(0,0)";
+    const rafId = this.rafMap.get(btn);
+    if (rafId) {
+      cancelAnimationFrame(rafId);
+      this.rafMap.delete(btn);
+    }
+    btn.style.transform = "translate3d(0,0,0)";
   }
 }
 
@@ -87,6 +105,35 @@ class TextReveal {
 }
 
 
+// ========================================
+// FORMSPREE ENHANCER
+// ========================================
+
+class FormspreeEnhancer {
+  constructor() {
+    this.forms = document.querySelectorAll('form[action*="formspree.io"]');
+    this.setRedirects();
+  }
+
+  setRedirects() {
+    const thanksPath = "/pages/thank-you.html";
+    const hasHttpOrigin = window.location.origin && window.location.origin !== "null";
+    const nextUrl = hasHttpOrigin ? `${window.location.origin}${thanksPath}` : thanksPath;
+
+    this.forms.forEach((form) => {
+      let nextInput = form.querySelector('input[name="_next"]');
+      if (!nextInput) {
+        nextInput = document.createElement("input");
+        nextInput.type = "hidden";
+        nextInput.name = "_next";
+        form.appendChild(nextInput);
+      }
+      nextInput.value = nextUrl;
+    });
+  }
+}
+
+
 
 
 // ========================================
@@ -96,4 +143,5 @@ class TextReveal {
 document.addEventListener("DOMContentLoaded", () => {
   new MagneticButtons();
   new TextReveal();
+  new FormspreeEnhancer();
 });

@@ -3,30 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Contact | Krishna Electrical & Automation</title>
+
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body>
-    <header>
-        <img src="Logo_v2.svg" alt="Logo" class="logo">
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="products.html">Products & Services</a>
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact Us</a>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h1>Contact Us</h1>
-            <p>Krishna Electrical & Automation</p>
-            <p>Ground Floor, Front Side A-46 Sector-65, Noida, Gautam Buddha Nagar-201301, Uttar Pradesh, India</p>
-            <p>Contact Person: Sanjeev Kumar</p>
-            <p>Email: info@keautomation.in</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Krishna Electrical and Automation. All rights reserved.</p>
-    </footer>
+
+<nav class="navbar">
+  <div class="container navbar-inner">
+    <a class="nav-left" href="../index.html" aria-label="Go to Home">
+      <img src="../assets/logos/logonobg.png" alt="Krishna Electrical & Automation" class="logo">
+    </a>
+
+    <div class="nav-center" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <h1 class="reveal-text">Contact Us</h1>
+    <p>
+      Share your project requirement, drawing, or material list. Our team will respond with
+      technical inputs and a tailored quotation.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container contact-grid">
+    <div class="info-card" data-animate="fade-up">
+      <h3>Krishna Electrical & Automation</h3>
+      <p>C162 Bulandshahar Road<br>Ghaziabad, Uttar Pradesh, India</p>
+      <p>Contact Person: Sanjeev Kumar</p>
+      <p>Email: sanjeev@krishnaelectricalautomation.com</p>
+      <p>Phone: +91 7042774178</p>
+      <p>GSTIN: 09AVTPA0647B1ZS</p>
+    </div>
+
+    <div class="contact-right" data-animate="fade-up" data-delay="120">
+      <form class="contact-form" action="https://formspree.io/f/xlgpdraj" method="POST">
+        <input type="hidden" name="_subject" value="New Inquiry - Krishna Electrical & Automation Website">
+        <input type="hidden" name="_next" value="/pages/thank-you.html">
+        <input type="hidden" name="source_page" value="Contact Page">
+        <div class="form-row">
+          <input type="text" name="first_name" placeholder="First Name" required>
+          <input type="text" name="last_name" placeholder="Last Name" required>
+        </div>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" placeholder="Project details, drawing reference, or material requirement" required></textarea>
+        <button type="submit" class="btn btn-primary">Send Enquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <h3>KRISHNA ELECTRICAL AND AUTOMATION</h3>
+      <p>GSTIN: 09AVTPA0647B1ZS</p>
+    </div>
+
+    <div>
+      <h4>Location</h4>
+      <p>C162 Bulandshahar Road<br>Ghaziabad</p>
+    </div>
+
+    <div>
+        <h4>Contact</h4>
+        <p>sanjeev@krishnaelectricalautomation.com +91 7042774178</p>
+        <p>vaibhav@krishnaelectricalautomation.com +91 8377863475</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/navbar.js"></script>
+<script src="../js/animations.js"></script>
+<script src="../js/main.js"></script>
+
 </body>
 </html>
