@@ -116,7 +116,7 @@ class FormspreeEnhancer {
   }
 
   setRedirects() {
-    const thanksPath = "/pages/thank-you.html";
+    const thanksPath = "/pages/thank-you/";
     const hasHttpOrigin = window.location.origin && window.location.origin !== "null";
     const nextUrl = hasHttpOrigin ? `${window.location.origin}${thanksPath}` : thanksPath;
 
