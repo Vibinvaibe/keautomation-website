@@ -1,0 +1,98 @@
+/* =========================================
+   PREMIUM DESIGN SYSTEM
+========================================= */
+
+:root {
+
+  /* Brand Colors */
+  --primary-yellow: #f5c400;
+  --primary-yellow-dark: #d4a900;
+  --black: #0e0e0e;
+  --black-soft: #151515;
+  --gray-dark: #1e1e1e;
+  --gray-light: #bdbdbd;
+  --white: #ffffff;
+
+  /* Gradients */
+  --yellow-gradient: linear-gradient(135deg, #f5c400, #ffdd33);
+
+  /* Shadows */
+  --shadow-soft: 0 10px 40px rgba(0,0,0,0.25);
+  --shadow-glow: 0 0 40px rgba(245,196,0,0.35);
+
+  /* Typography */
+  --font-primary: 'Inter', sans-serif;
+
+  /* Motion */
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-fast: 300ms var(--ease-premium);
+  --transition-medium: 500ms var(--ease-premium);
+  --transition-slow: 800ms var(--ease-premium);
+
+  /* Layout */
+  --container-width: 1400px;
+}
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   TYPOGRAPHY (FLUID)
+========================================= */
+
+h1 {
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+p {
+  color: var(--gray-light);
+  font-size: 1rem;
+  max-width: 600px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+  width: 92%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}

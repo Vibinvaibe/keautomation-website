@@ -1,0 +1,104 @@
+/* =========================================
+   PREMIUM MICRO ANIMATIONS
+========================================= */
+
+[data-animate] {
+  will-change: transform, opacity;
+}
+
+/* =========================================
+   CINEMATIC TEXT REVEAL
+========================================= */
+
+/* =========================================
+   CINEMATIC TEXT REVEAL (WORD-BASED)
+========================================= */
+
+.reveal-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: 1100ms cubic-bezier(0.22,1,0.36,1);
+  will-change: transform, opacity;
+}
+
+.reveal-text.active .reveal-word {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* =========================================
+   MAGNETIC BUTTON FEEDBACK
+========================================= */
+
+.btn {
+  will-change: transform;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+/* =========================================
+   PREMIUM NAVBAR UNDERLINE (GLOW)
+========================================= */
+
+/* =========================================
+   NAV LINK UNDERLINE + GLOW
+========================================= */
+
+/* =========================================
+   NAV LINK UNDERLINE + GLOW (FINAL)
+========================================= */
+
+.nav-center a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+  width: 0%;
+  height: 2px;
+  background: var(--primary-yellow);
+  border-radius: 999px;
+  transform: translateX(-50%);
+  transition: 450ms cubic-bezier(0.22,1,0.36,1);
+  box-shadow:
+    0 0 10px rgba(245,196,0,0.65),
+    0 0 24px rgba(245,196,0,0.35);
+}
+
+.nav-center a:hover::after {
+  width: 100%;
+}
+
+/* =========================================
+   IMAGE LUXURY ZOOM
+========================================= */
+
+.image-hover {
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.image-hover img {
+  transition: transform 800ms cubic-bezier(0.22,1,0.36,1);
+}
+
+.image-hover:hover img {
+  transform: scale(1.08);
+}
+
+/* =========================================
+   FLOAT UTILITY
+========================================= */
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+.float {
+  animation: float 4s ease-in-out infinite;
+}
